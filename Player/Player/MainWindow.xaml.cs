@@ -37,13 +37,9 @@ namespace Player {
                 DirectoryInfo info = new DirectoryInfo(folderBrowser.SelectedPath);
                 foreach (FileInfo item in info.GetFiles())
                 {
-
                     MediaFile media = new MediaFile(item.FullName);
-                    MessageBox.Show(media.Title);
                     tempSong = new Song(media.General.Description, 0, media.General.DurationString, media.Title, media.Description);
-                    SongList.Add(tempSong);
-
-
+                    SongList.Add(tempSong);                   
                 }
                 
             }

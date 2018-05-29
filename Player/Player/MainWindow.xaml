@@ -33,25 +33,51 @@
                         </Grid.RowDefinitions>
 
                         <Image Name="ImageCover" Grid.RowSpan="2" Margin="1" Source="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT79VFiIQHdxL5w8RM8t41Ec8rGuxksuXZN-mdvs0LujztybzqI"></Image>
-                        <Label Name="LableName" FontSize="16" Grid.Row="0" Grid.Column="1">Lorem ipsum dolor sit amet</Label>
-                        <Label Name="LableAuthor" FontSize="9" Grid.Row="1" Grid.Column="1">Lorem ipsum dolor sit amet</Label>
-                        <Label Name="LableSupport" FontSize="16" Grid.Row="0" Grid.Column="2">Lorem ipsum dolor sit amet</Label>
+                        <Label Name="LableTitle" FontSize="18" Grid.Row="0" Grid.Column="1">Title</Label>
+                        <Label Name="LableAuthor" FontSize="15" Grid.Row="0" Grid.Column="2">Author</Label>
+                        <Label Name="LableSupport" FontSize="8" Grid.Row="1" Grid.Column="1">Support</Label>
                         <ComboBox FontSize="10" Name="ComboBoxRating" Grid.Row="1" Grid.Column="2" Background="Gray">
                             <ComboBoxItem IsSelected="True" IsEnabled="False">Select Rating</ComboBoxItem>
-                            <ComboBoxItem>☼</ComboBoxItem>
-                            <ComboBoxItem>☼ ☼</ComboBoxItem>
-                            <ComboBoxItem>☼ ☼ ☼</ComboBoxItem>
-                            <ComboBoxItem>☼ ☼ ☼ ☼</ComboBoxItem>
-                            <ComboBoxItem>☼ ☼ ☼ ☼ ☼</ComboBoxItem>
+                            <ComboBoxItem>♫</ComboBoxItem>
+                            <ComboBoxItem>♫ ♫</ComboBoxItem>
+                            <ComboBoxItem>♫ ♫ ♫</ComboBoxItem>
+                            <ComboBoxItem>♫ ♫ ♫ ♫</ComboBoxItem>
+                            <ComboBoxItem>♫ ♫ ♫ ♫ ♫</ComboBoxItem>
                         </ComboBox>
-
                     </Grid>
+
                 </DataTemplate>
             </ListView.ItemTemplate>
 
         </ListView>
 
-        
+        <Grid Background="Gray" Height="50">
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="50" />
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="150" />
+            </Grid.ColumnDefinitions>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="30"/>
+                <RowDefinition />
+            </Grid.RowDefinitions>
+
+            <Image Name="ImageCover" Grid.RowSpan="2" Margin="1" Source="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT79VFiIQHdxL5w8RM8t41Ec8rGuxksuXZN-mdvs0LujztybzqI"></Image>
+            <Label Name="LableTitle" FontSize="18" Grid.Row="0" Grid.Column="1">Title</Label>
+            <Label Name="LableAuthor" FontSize="15" Grid.Row="0" Grid.Column="2">Author</Label>
+            <Label Name="LableSupport" FontSize="8" Grid.Row="1" Grid.Column="1">Support</Label>
+            <ComboBox FontSize="10" Name="ComboBoxRating" Grid.Row="1" Grid.Column="2" Background="Gray">
+                <ComboBoxItem IsSelected="True" IsEnabled="False">Select Rating</ComboBoxItem>
+                <ComboBoxItem>♫</ComboBoxItem>
+                <ComboBoxItem>♫ ♫</ComboBoxItem>
+                <ComboBoxItem>♫ ♫ ♫</ComboBoxItem>
+                <ComboBoxItem>♫ ♫ ♫ ♫</ComboBoxItem>
+                <ComboBoxItem>♫ ♫ ♫ ♫ ♫</ComboBoxItem>
+            </ComboBox>
+        </Grid>
+
 
     </Grid>
 </Window>

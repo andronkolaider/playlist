@@ -49,6 +49,7 @@ namespace Player {
             }
             Playlist.ItemsSource = SongList;
         }
+
     }
 
 

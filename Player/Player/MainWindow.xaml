@@ -18,7 +18,12 @@
 
         </Grid.RowDefinitions>
 
-        <ListView Grid.Row="2" Background="Aqua" Name="Playlist">
+        <Menu FontSize="17">
+            <MenuItem Header="Open" MouseDown="SelectFolder"></MenuItem>
+            
+        </Menu>
+
+        <ListView HorizontalContentAlignment="Stretch" Grid.Row="2" Background="Aqua" Name="Playlist">
             <ListView.ItemsPanel>
                 <ItemsPanelTemplate>
                     <StackPanel></StackPanel>
@@ -52,7 +57,6 @@
                                     <Setter Property="Foreground" Value="Azure"></Setter>
                                 </Style>
                             </ComboBox.Resources>
-                            <ComboBoxItem IsSelected="True" IsEnabled="False">Select Rating</ComboBoxItem>
                             <ComboBoxItem >♫</ComboBoxItem>
                             <ComboBoxItem >♫ ♫</ComboBoxItem>
                             <ComboBoxItem >♫ ♫ ♫</ComboBoxItem>

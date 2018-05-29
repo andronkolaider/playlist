@@ -19,7 +19,7 @@
         </Grid.RowDefinitions>
 
         <Menu FontSize="17">
-            <MenuItem Header="Open" MouseDown="SelectFolder"></MenuItem>
+            <MenuItem Header="Open" Click="SelectFolder"></MenuItem>
             
         </Menu>
 

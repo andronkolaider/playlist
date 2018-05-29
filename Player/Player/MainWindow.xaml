@@ -13,7 +13,7 @@
         <ListView Background="Aqua">
             <ListView.ItemsPanel>
                 <ItemsPanelTemplate>
-                    <WrapPanel HorizontalAlignment="Center"></WrapPanel>
+                    <StackPanel HorizontalAlignment="Center"></StackPanel>
                 </ItemsPanelTemplate>
             </ListView.ItemsPanel>
 
@@ -58,6 +58,8 @@
 
         </ListView>
 
+        <!--
+        
         <Grid Background="Gray" Height="50">
 
             <Grid.ColumnDefinitions>
@@ -92,6 +94,7 @@
             </ComboBox>
         </Grid>
 
-
+-->
+        
     </Grid>
 </Window>

@@ -18,7 +18,7 @@
 
         </Grid.RowDefinitions>
 
-        <ListView Grid.Row="2" Background="Aqua">
+        <ListView Grid.Row="2" Background="Aqua" Name="Playlist">
             <ListView.ItemsPanel>
                 <ItemsPanelTemplate>
                     <StackPanel></StackPanel>

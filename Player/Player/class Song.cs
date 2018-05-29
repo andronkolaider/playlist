@@ -7,7 +7,7 @@ using System.Media;
 using MediaInfoNET;
 namespace Player
 {
-    class Song
+  public  class Song
     {
         short rating;
         public double Duration { get; set; }
@@ -25,7 +25,7 @@ namespace Player
         public string Artist { get; set; }
         public string Title { get; set; }
         public string SupportInfo { get; set; }
-        public Song(string _artist,short _rating,double _duration)
+        public Song(string _artist, short _rating, string _duration, string _title, string _supportInfo)
         {
             Duration = _duration;
             Rating = _rating;

@@ -1,0 +1,10 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:Player">
+
+    <Style x:Key="Style" TargetType="Control">
+        <Setter Property="Background" Value="Gray"/>
+        <Setter Property="Foreground" Value="#e5e5e5"/>
+    </Style>
+
+</ResourceDictionary>

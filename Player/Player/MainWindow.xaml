@@ -9,7 +9,7 @@
         MinHeight="500" MinWidth="675"
         MaxHeight="1000" MaxWidth="1175"
         >
-    <Grid>
+    <Grid Name="GridMain">
 
         <Grid.RowDefinitions>
 
@@ -20,9 +20,14 @@
 
         <Menu FontSize="17">
             <MenuItem Header="Open" Click="SelectFolder"></MenuItem>
+            <MenuItem Header="Style">
+                <MenuItem Name="Light" Header="Light" Click="Light_Click"/>
+                <MenuItem Name="Gray" Header="Gray" Click="Gray_Click"/>
+                <MenuItem Name="Dark" Header="Dark" Click="Dark_Click" />
+            </MenuItem>
         </Menu>
 
-        <ListView HorizontalContentAlignment="Stretch" Grid.Row="2" Background="Aqua" Name="Playlist">
+        <ListView Style="{DynamicResource Style}" HorizontalContentAlignment="Stretch" Grid.Row="2" Background="Azure" Name="Playlist">
             <ListView.ItemsPanel>
                 <ItemsPanelTemplate>
                     <StackPanel></StackPanel>
@@ -31,8 +36,7 @@
 
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <Grid Background="Gray" Height="50" MinWidth="625">
-
+                    <Grid Height="50" MinWidth="625">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="50" />
                             <ColumnDefinition Width="1*" />
@@ -44,23 +48,16 @@
                             <RowDefinition />
                         </Grid.RowDefinitions>
 
-                        <TextBlock Name="LableTitle" TextAlignment="Center" FontSize="18" Grid.Row="0" Grid.Column="1"    Text="{Binding Path=Title}"></TextBlock>
-                        <TextBlock Name="LableAuthor" FontSize="15" TextAlignment="Center" Grid.Row="0" Grid.Column="2"   Text="{Binding Path=Artist}"></TextBlock>
-                        <TextBlock Name="LableSupport" FontSize="8" TextAlignment="Center" Grid.Row="1" Grid.Column="1"   Text="{Binding Path=SupportInfo}"></TextBlock>
+                        <TextBlock Name="LableTitle" TextAlignment="Center" FontSize="18" Grid.Row="0" Grid.Column="1" Text="{Binding Path=Title}"></TextBlock>
+                        <TextBlock Name="LableAuthor" FontSize="15" TextAlignment="Center" Grid.Row="0" Grid.Column="2" Text="{Binding Path=Artist}"></TextBlock>
+                        <TextBlock Name="LableSupport" FontSize="8" TextAlignment="Center" Grid.Row="1" Grid.Column="1" Text="{Binding Path=SupportInfo}"></TextBlock>
                         <ComboBox FontSize="10" Name="ComboBoxRating" Grid.Row="1" Grid.Column="2" SelectedIndex="{Binding Path=Rating}">
-                            <ComboBox.Resources>
-                                <Style TargetType="ComboBoxItem">
-                                    <Setter Property="Background" Value="Gray"></Setter>
-                                    <Setter Property="BorderBrush" Value="DarkGray"></Setter>
-                                    <Setter Property="Foreground" Value="Azure"></Setter>
-                                </Style>
-                            </ComboBox.Resources>
                             <ComboBoxItem IsSelected="True" IsEnabled="False">Select Rating</ComboBoxItem>
-                            <ComboBoxItem >♫</ComboBoxItem>
-                            <ComboBoxItem >♫ ♫</ComboBoxItem>                         
-                            <ComboBoxItem >♫ ♫ ♫</ComboBoxItem>
-                            <ComboBoxItem >♫ ♫ ♫ ♫</ComboBoxItem>
-                            <ComboBoxItem >♫ ♫ ♫ ♫ ♫</ComboBoxItem>
+                            <ComboBoxItem Style="{DynamicResource Style}" >♫</ComboBoxItem>
+                            <ComboBoxItem Style="{DynamicResource Style}">♫ ♫</ComboBoxItem>
+                            <ComboBoxItem Style="{DynamicResource Style}">♫ ♫ ♫</ComboBoxItem>
+                            <ComboBoxItem Style="{DynamicResource Style}">♫ ♫ ♫ ♫</ComboBoxItem>
+                            <ComboBoxItem Style="{DynamicResource Style}" >♫ ♫ ♫ ♫ ♫</ComboBoxItem>
                         </ComboBox>
                     </Grid>
 
@@ -68,10 +65,8 @@
             </ListView.ItemTemplate>
 
         </ListView>
-
-        <!--
-        
-        <Grid Background="Gray" Height="50">
+<!--
+        <Grid Grid.Row="1" Background="Gray" Height="50" MinWidth="625">
 
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="50" />
@@ -84,18 +79,17 @@
                 <RowDefinition />
             </Grid.RowDefinitions>
 
-            <Image Name="ImageCover" Grid.RowSpan="2" Margin="1" Source="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT79VFiIQHdxL5w8RM8t41Ec8rGuxksuXZN-mdvs0LujztybzqI"></Image>
-            <Label Name="LableTitle" FontSize="18" Grid.Row="0" Grid.Column="1">Title</Label>
-            <Label Name="LableAuthor" FontSize="15" Grid.Row="0" Grid.Column="2">Author</Label>
-            <Label Name="LableSupport" FontSize="8" Grid.Row="1" Grid.Column="1">Support</Label>
-            <ComboBox FontSize="10" Name="ComboBoxRating" Grid.Row="1" Grid.Column="2" >
+            <TextBlock Name="LableTitle" TextAlignment="Center" FontSize="18" Grid.Row="0" Grid.Column="1"    Text="{Binding Path=Title}"></TextBlock>
+            <TextBlock Name="LableAuthor" FontSize="15" TextAlignment="Center" Grid.Row="0" Grid.Column="2"   Text="{Binding Path=Artist}"></TextBlock>
+            <TextBlock Name="LableSupport" FontSize="8" TextAlignment="Center" Grid.Row="1" Grid.Column="1"   Text="{Binding Path=SupportInfo}"></TextBlock>
+            <ComboBox FontSize="10" Name="ComboBoxRating" Grid.Row="1" Grid.Column="2" SelectedIndex="{Binding Path=Rating}">
                 <ComboBox.Resources>
                     <Style TargetType="ComboBoxItem">
                         <Setter Property="Background" Value="Gray"></Setter>
                         <Setter Property="BorderBrush" Value="DarkGray"></Setter>
                         <Setter Property="Foreground" Value="Azure"></Setter>
                     </Style>
-                    </ComboBox.Resources>
+                </ComboBox.Resources>
                 <ComboBoxItem IsSelected="True" IsEnabled="False">Select Rating</ComboBoxItem>
                 <ComboBoxItem >♫</ComboBoxItem>
                 <ComboBoxItem >♫ ♫</ComboBoxItem>
@@ -104,8 +98,6 @@
                 <ComboBoxItem >♫ ♫ ♫ ♫ ♫</ComboBoxItem>
             </ComboBox>
         </Grid>
-
 -->
-
     </Grid>
 </Window>

@@ -19,7 +19,7 @@ namespace Player
             }
             set
             {
-                rating = Convert.ToInt16(value + 1);
+                rating = Convert.ToInt16(value);
             }
         }
         public string Artist { get; set; }

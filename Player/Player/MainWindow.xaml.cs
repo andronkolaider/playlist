@@ -46,6 +46,20 @@ namespace Player {
             Playlist.ItemsSource = SongList;
         }
 
+        private void Light_Click(object sender, RoutedEventArgs e) {
+            ResourceDictionary RD = new ResourceDictionary() { Source = new Uri("White.xaml", UriKind.Relative) };
+            this.Resources.MergedDictionaries.Add(RD);
+        }
+
+        private void Gray_Click(object sender, RoutedEventArgs e) {
+            ResourceDictionary RD = new ResourceDictionary() { Source = new Uri("Gray.xaml", UriKind.Relative) };
+            this.Resources.MergedDictionaries.Add(RD);
+        }
+
+        private void Dark_Click(object sender, RoutedEventArgs e) {
+            ResourceDictionary RD = new ResourceDictionary() { Source = new Uri("Dark.xaml", UriKind.Relative) };
+            this.Resources.MergedDictionaries.Add(RD);
+        }
     }
 
 

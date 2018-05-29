@@ -5,9 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Player"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525"
-        MinHeight="350" MinWidth="525"
-        MaxHeight="500" MaxWidth="675"
+        Title="MainWindow" Height="500" Width="675"
+        MinHeight="500" MinWidth="675"
+        MaxHeight="1000" MaxWidth="1175"
         >
     <Grid>
 
@@ -20,7 +20,6 @@
 
         <Menu FontSize="17">
             <MenuItem Header="Open" Click="SelectFolder"></MenuItem>
-            
         </Menu>
 
         <ListView HorizontalContentAlignment="Stretch" Grid.Row="2" Background="Aqua" Name="Playlist">
@@ -32,22 +31,22 @@
 
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <Grid Background="Gray" Height="50">
+                    <Grid Background="Gray" Height="50" MinWidth="625">
 
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="50" />
                             <ColumnDefinition Width="1*" />
                             <ColumnDefinition Width="150" />
-                        </Grid.ColumnDefinitions>
+                        </Grid.ColumnDefinitions> 
 
                         <Grid.RowDefinitions>
                             <RowDefinition Height="30"/>
                             <RowDefinition />
                         </Grid.RowDefinitions>
 
-                        <TextBlock Name="LableTitle" FontSize="18" Grid.Row="0" Grid.Column="1"    Text="{Binding Path=Title}"></TextBlock>
-                        <TextBlock Name="LableAuthor" FontSize="15" Grid.Row="0" Grid.Column="2"   Text="{Binding Path=Artist}"></TextBlock>
-                        <TextBlock Name="LableSupport" FontSize="8" Grid.Row="1" Grid.Column="1"   Text="{Binding Path=SupportInfo}"></TextBlock>
+                        <TextBlock Name="LableTitle" TextAlignment="Center" FontSize="18" Grid.Row="0" Grid.Column="1"    Text="{Binding Path=Title}"></TextBlock>
+                        <TextBlock Name="LableAuthor" FontSize="15" TextAlignment="Center" Grid.Row="0" Grid.Column="2"   Text="{Binding Path=Artist}"></TextBlock>
+                        <TextBlock Name="LableSupport" FontSize="8" TextAlignment="Center" Grid.Row="1" Grid.Column="1"   Text="{Binding Path=SupportInfo}"></TextBlock>
                         <ComboBox FontSize="10" Name="ComboBoxRating" Grid.Row="1" Grid.Column="2" SelectedIndex="{Binding Path=Rating}">
                             <ComboBox.Resources>
                                 <Style TargetType="ComboBoxItem">
@@ -56,8 +55,9 @@
                                     <Setter Property="Foreground" Value="Azure"></Setter>
                                 </Style>
                             </ComboBox.Resources>
+                            <ComboBoxItem IsSelected="True" IsEnabled="False">Select Rating</ComboBoxItem>
                             <ComboBoxItem >♫</ComboBoxItem>
-                            <ComboBoxItem >♫ ♫</ComboBoxItem>
+                            <ComboBoxItem >♫ ♫</ComboBoxItem>                         
                             <ComboBoxItem >♫ ♫ ♫</ComboBoxItem>
                             <ComboBoxItem >♫ ♫ ♫ ♫</ComboBoxItem>
                             <ComboBoxItem >♫ ♫ ♫ ♫ ♫</ComboBoxItem>

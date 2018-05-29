@@ -39,7 +39,7 @@ namespace Player {
                 {
 
                     MediaFile media = new MediaFile(item.FullName);
-                    MessageBox.Show(media.Title);
+                   // MessageBox.Show(media.Title);
                     tempSong = new Song(media.General.Description, 0, media.General.DurationString, media.Title, media.Description);
                     SongList.Add(tempSong);
 

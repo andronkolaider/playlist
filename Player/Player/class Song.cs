@@ -10,7 +10,7 @@ namespace Player
   public  class Song
     {
         short rating;
-        public double Duration { get; set; }
+        public string Duration { get; set; }
         public short Rating
         {
             get 
@@ -25,12 +25,14 @@ namespace Player
         public string Artist { get; set; }
         public string Title { get; set; }
         public string SupportInfo { get; set; }
+
         public Song(string _artist, short _rating, string _duration, string _title, string _supportInfo)
         {
             Duration = _duration;
             Rating = _rating;
             Artist = _artist;
-
+            Title = _title;
+            SupportInfo = _supportInfo;
         }
     }
 }

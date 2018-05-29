@@ -7,14 +7,14 @@ using System.Media;
 using MediaInfoNET;
 namespace Player
 {
-    class Song
+  public  class Song
     {
-        public double Duration { get; }
+        public string Duration { get; }
         public short Rating { get; }
         public string Artist { get; }
         public string Title { get; }
         public string SupportInfo { get; }
-        public Song(string _artist,short _rating,double _duration)
+        public Song(string _artist,short _rating,string _duration,string _title,string _supportInfo)
         {
             Duration = _duration;
             Rating = _rating;

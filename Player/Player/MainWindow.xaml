@@ -10,7 +10,7 @@
         MaxHeight="500" MaxWidth="675"
         >
     <Grid>
-        <ListView Background="Aqua">
+        <ListView Background="Aqua" Name="Playlist">
             <ListView.ItemsPanel>
                 <ItemsPanelTemplate>
                     <WrapPanel HorizontalAlignment="Center"></WrapPanel>
@@ -68,7 +68,7 @@
             <Label Name="LableTitle" FontSize="18" Grid.Row="0" Grid.Column="1">Title</Label>
             <Label Name="LableAuthor" FontSize="15" Grid.Row="0" Grid.Column="2">Author</Label>
             <Label Name="LableSupport" FontSize="8" Grid.Row="1" Grid.Column="1">Support</Label>
-            <ComboBox FontSize="10" Name="ComboBoxRating" Grid.Row="1" Grid.Column="2" Background="Gray">
+            <ComboBox FontSize="10" Name="ComboBoxRating" Grid.Row="1" Grid.Column="2" Background="Gray" SelectionChanged="SelectFolder">
                 <ComboBoxItem IsSelected="True" IsEnabled="False">Select Rating</ComboBoxItem>
                 <ComboBoxItem>♫</ComboBoxItem>
                 <ComboBoxItem>♫ ♫</ComboBoxItem>

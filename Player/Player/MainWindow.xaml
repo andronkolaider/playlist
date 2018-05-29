@@ -9,7 +9,7 @@
         MinHeight="500" MinWidth="675"
         MaxHeight="1000" MaxWidth="1175"
         >
-    <Grid Name="GridMain">
+    <Grid Name="GridMain" Style="{DynamicResource GridReversedStyle}">
 
         <Grid.RowDefinitions>
 
@@ -18,12 +18,12 @@
 
         </Grid.RowDefinitions>
 
-        <Menu FontSize="17">
+        <Menu FontSize="17" Style="{DynamicResource Style}">
             <MenuItem Header="Open" Click="SelectFolder"></MenuItem>
             <MenuItem Header="Style">
-                <MenuItem Name="Light" Header="Light" Click="Light_Click"/>
-                <MenuItem Name="Gray" Header="Gray" Click="Gray_Click"/>
-                <MenuItem Name="Dark" Header="Dark" Click="Dark_Click" />
+                <MenuItem Style="{DynamicResource Style}" Name="Light" Header="Light" Click="Light_Click"/>
+                <MenuItem Style="{DynamicResource Style}" Name="Gray" Header="Gray" Click="Gray_Click"/>
+                <MenuItem Style="{DynamicResource Style}" Name="Dark" Header="Dark" Click="Dark_Click" />
             </MenuItem>
         </Menu>
 
@@ -36,7 +36,7 @@
 
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <Grid Height="50" MinWidth="625">
+                    <Grid Height="50" MinWidth="625" Style="{DynamicResource GridStyle}">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="50" />
                             <ColumnDefinition Width="1*" />

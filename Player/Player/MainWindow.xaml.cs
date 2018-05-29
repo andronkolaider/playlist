@@ -21,9 +21,11 @@ namespace Player {
    
     public partial class MainWindow : Window {
         public List<Song> SongList;
+
         public MainWindow() {
             InitializeComponent();
-          
+            ResourceDictionary RD = new ResourceDictionary() { Source = new Uri("White.xaml", UriKind.Relative) };
+            this.Resources.MergedDictionaries.Add(RD);
         }
 
         public void SelectFolder(object sender, EventArgs e)

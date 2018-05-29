@@ -10,7 +10,15 @@
         MaxHeight="500" MaxWidth="675"
         >
     <Grid>
-        <ListView Background="Aqua" Name="Playlist" MouseDown="SelectFolder">
+
+        <Grid.RowDefinitions>
+
+            <RowDefinition Height="25" />
+            <RowDefinition Height="1*" />
+
+        </Grid.RowDefinitions>
+
+        <ListView Grid.Row="2" Background="Aqua">
             <ListView.ItemsPanel>
                 <ItemsPanelTemplate>
                     <StackPanel></StackPanel>
@@ -21,7 +29,7 @@
                 <DataTemplate>
                     <Grid Background="Gray" Height="50">
 
-                        <Grid.ColumnDefinitions> 
+                        <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="50" />
                             <ColumnDefinition Width="1*" />
                             <ColumnDefinition Width="150" />
@@ -95,6 +103,6 @@
         </Grid>
 
 -->
-        
+
     </Grid>
 </Window>

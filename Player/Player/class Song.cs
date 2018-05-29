@@ -12,6 +12,8 @@ namespace Player
         public double Duration { get; }
         public short Rating { get; }
         public string Artist { get; }
+        public string Title { get; }
+        public string SupportInfo { get; }
         public Song(string _artist,short _rating,double _duration)
         {
             Duration = _duration;

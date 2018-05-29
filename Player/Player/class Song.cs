@@ -5,6 +5,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Media;
 using MediaInfoNET;
+using static System.Net.Mime.MediaTypeNames;
+using TagLib;
+
 namespace Player
 {
   public  class Song
@@ -25,7 +28,8 @@ namespace Player
         public string Artist { get; set; }
         public string Title { get; set; }
         public string SupportInfo { get; set; }
-        
+        public Image Cover;
+
         public Song(string _artist, short _rating, string _duration, string _title, string _supportInfo)
         {
             Duration = _duration;

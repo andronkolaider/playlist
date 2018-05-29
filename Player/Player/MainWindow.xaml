@@ -48,6 +48,7 @@
                             <RowDefinition />
                         </Grid.RowDefinitions>
 
+                        <Image Name="ImageCover" Grid.RowSpan="2" Margin="1" Source="{Binding Path=Cover}"></Image>
                         <TextBlock Name="LableTitle" TextAlignment="Center" FontSize="18" Grid.Row="0" Grid.Column="1" Text="{Binding Path=Title}"></TextBlock>
                         <TextBlock Name="LableAuthor" FontSize="15" TextAlignment="Center" Grid.Row="0" Grid.Column="2" Text="{Binding Path=Artist}"></TextBlock>
                         <TextBlock Name="LableSupport" FontSize="8" TextAlignment="Center" Grid.Row="1" Grid.Column="1" Text="{Binding Path=SupportInfo}"></TextBlock>

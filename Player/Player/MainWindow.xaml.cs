@@ -39,9 +39,23 @@ namespace Player {
                 DirectoryInfo info = new DirectoryInfo(folderBrowser.SelectedPath);
                 foreach (FileInfo item in info.GetFiles())
                 {
-                  
+                   
+                   
                     MediaFile media = new MediaFile(item.FullName);
                     tempSong = new Song(media.General.Description, 0, media.General.DurationString, media.Title, media.Description);
+
+                    // ahtung !!
+
+                    var file = new TagLib.Mpeg4.File(item.FullName);
+                    if (file.Tag.Pictures.Length >= 1) {
+                        var bin = (byte[])(file.Tag.Pictures[0].Data.Data);
+                        BitmapImage image = new BitmapImage();
+                        using (MemoryStream str = new MemoryStream(bin)) {
+                            image. = BitmapFrame.Create(str, BitmapCreateOptions.None, BitmapCacheOption.OnLoad);
+                        }
+                            tempSong.Cover = BitmapImage.FromStream(new MemoryStream(bin)).GetThumbnailImage(100, 100, null, IntPtr.Zero);
+                    }
+                    // !! todo
 
                     if (item.Extension == ".mp3" || item.Extension == ".wav" || item.Extension == ".flac") 
                         SongList.Add(tempSong);

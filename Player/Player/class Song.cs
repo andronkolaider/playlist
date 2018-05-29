@@ -9,11 +9,22 @@ namespace Player
 {
     class Song
     {
-        public double Duration { get; }
-        public short Rating { get; }
-        public string Artist { get; }
-        public string Title { get; }
-        public string SupportInfo { get; }
+        short rating;
+        public double Duration { get; set; }
+        public short Rating
+        {
+            get 
+            {
+                return rating;
+            }
+            set
+            {
+                rating = Convert.ToInt16(value + 1);
+            }
+        }
+        public string Artist { get; set; }
+        public string Title { get; set; }
+        public string SupportInfo { get; set; }
         public Song(string _artist,short _rating,double _duration)
         {
             Duration = _duration;

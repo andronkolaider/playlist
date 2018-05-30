@@ -3,7 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:Player"
+        xmlns:local="clr-namespace :Player"
         mc:Ignorable="d"
         Title="MainWindow" Height="500" Width="675"
         MinHeight="500" MinWidth="675"
@@ -28,9 +28,12 @@
             </MenuItem>
         </Menu>
 
-        <Grid Name="GridPlayer" Style="{DynamicResource GridStyle}">
-            
-            
+        <Grid Grid.Row="1" Name="GridPlayer" Style="{DynamicResource GridStyle}">
+            <ToolBar>
+                <Button Width="100" Height="100">
+                    <Image Source="" />
+                </Button>
+            </ToolBar>
         </Grid>
 
         <ListView Style="{DynamicResource Style}" ScrollViewer.HorizontalScrollBarVisibility="Disabled" HorizontalContentAlignment="Stretch" Grid.Row="2" Background="Azure" Name="Playlist">

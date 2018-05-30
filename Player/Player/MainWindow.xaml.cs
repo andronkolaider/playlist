@@ -24,7 +24,7 @@ namespace Player {
 
         public MainWindow() {
             InitializeComponent();
-            ResourceDictionary RD = new ResourceDictionary() { Source = new Uri("White.xaml", UriKind.Relative) };
+            ResourceDictionary RD = new ResourceDictionary() { Source = new Uri("Gray.xaml", UriKind.Relative) };
             this.Resources.MergedDictionaries.Add(RD);
         }
 
@@ -76,6 +76,10 @@ namespace Player {
         private void Dark_Click(object sender, RoutedEventArgs e) {
             ResourceDictionary RD = new ResourceDictionary() { Source = new Uri("Dark.xaml", UriKind.Relative) };
             this.Resources.MergedDictionaries.Add(RD);
+        }
+
+        private void Playlist_SelectionChanged(object sender, SelectionChangedEventArgs e) {
+          //  LabelSongInfoSizable.Content = SongList[Playlist.SelectedIndex].Artist;
         }
     }
 

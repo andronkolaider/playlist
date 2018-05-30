@@ -34,30 +34,27 @@ namespace Player {
             Song tempSong;
             SongList = new List<Song>();
             System.Windows.Forms.FolderBrowserDialog folderBrowser = new System.Windows.Forms.FolderBrowserDialog();
-            if(System.Windows.Forms.DialogResult.OK== folderBrowser.ShowDialog())
-            {
+            if(System.Windows.Forms.DialogResult.OK== folderBrowser.ShowDialog()){
+
                 DirectoryInfo info = new DirectoryInfo(folderBrowser.SelectedPath);
-                foreach (FileInfo item in info.GetFiles())
-                {
-                   
-                   
+
+                foreach (FileInfo item in info.GetFiles()) {
+                                     
                     MediaFile media = new MediaFile(item.FullName);
                     tempSong = new Song(media.General.Description, 0, media.General.DurationString, media.Title, media.Description);
 
                     // ahtung !!
 
-                    var file = new TagLib.Mpeg4.File(item.FullName);
-                    if (file.Tag.Pictures.Length >= 1) {
-                        var bin = (byte[])(file.Tag.Pictures[0].Data.Data);
-                        BitmapImage image = new BitmapImage();
-                        using (MemoryStream str = new MemoryStream(bin)) {
-                            image. = BitmapFrame.Create(str, BitmapCreateOptions.None, BitmapCacheOption.OnLoad);
-                        }
-                            tempSong.Cover = BitmapImage.FromStream(new MemoryStream(bin)).GetThumbnailImage(100, 100, null, IntPtr.Zero);
-                    }
+                    TagLib.File file = TagLib.File.Create(item.FullName);
+                    tempSong.Artist = file.Tag.FirstArtist;
+
+                    if (file.Tag.Pictures.Length >= 1) { 
+                        var a = file.Tag.Pictures[0].Data.Data;
+                        tempSong.Cover = (BitmapSource)new ImageSourceConverter().ConvertFrom(a);
+                    }                   
                     // !! todo
 
-                    if (item.Extension == ".mp3" || item.Extension == ".wav" || item.Extension == ".flac") 
+                    if (item.Extension == ".mp3" || item.Extension == ".wav" || item.Extension == ".flac" || item.Extension == ".acc") 
                         SongList.Add(tempSong);
                                                
                 }

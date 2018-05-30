@@ -14,6 +14,7 @@
         <Grid.RowDefinitions>
 
             <RowDefinition Height="25" />
+            <RowDefinition Height="100" />
             <RowDefinition Height="1*" />
 
         </Grid.RowDefinitions>
@@ -27,7 +28,12 @@
             </MenuItem>
         </Menu>
 
-        <ListView Style="{DynamicResource Style}" HorizontalContentAlignment="Stretch" Grid.Row="2" Background="Azure" Name="Playlist">
+        <Grid Name="GridPlayer" Style="{DynamicResource GridStyle}">
+            
+            
+        </Grid>
+
+        <ListView Style="{DynamicResource Style}" ScrollViewer.HorizontalScrollBarVisibility="Disabled" HorizontalContentAlignment="Stretch" Grid.Row="2" Background="Azure" Name="Playlist">
             <ListView.ItemsPanel>
                 <ItemsPanelTemplate>
                     <StackPanel></StackPanel>
@@ -54,11 +60,11 @@
                         <TextBlock Name="LableSupport" FontSize="8" TextAlignment="Center" Grid.Row="1" Grid.Column="1" Text="{Binding Path=SupportInfo}"></TextBlock>
                         <ComboBox FontSize="10" Name="ComboBoxRating" Grid.Row="1" Grid.Column="2" SelectedIndex="{Binding Path=Rating}">
                             <ComboBoxItem IsSelected="True" IsEnabled="False">Select Rating</ComboBoxItem>
-                            <ComboBoxItem Style="{DynamicResource Style}" >♫</ComboBoxItem>
+                            <ComboBoxItem Style="{DynamicResource Style}">♫</ComboBoxItem>
                             <ComboBoxItem Style="{DynamicResource Style}">♫ ♫</ComboBoxItem>
                             <ComboBoxItem Style="{DynamicResource Style}">♫ ♫ ♫</ComboBoxItem>
                             <ComboBoxItem Style="{DynamicResource Style}">♫ ♫ ♫ ♫</ComboBoxItem>
-                            <ComboBoxItem Style="{DynamicResource Style}" >♫ ♫ ♫ ♫ ♫</ComboBoxItem>
+                            <ComboBoxItem Style="{DynamicResource Style}">♫ ♫ ♫ ♫ ♫</ComboBoxItem>
                         </ComboBox>
                     </Grid>
 
@@ -66,7 +72,10 @@
             </ListView.ItemTemplate>
 
         </ListView>
+
 <!--
+        <Image Grid.Row="2" Name="img" ></Image>
+        
         <Grid Grid.Row="1" Background="Gray" Height="50" MinWidth="625">
 
             <Grid.ColumnDefinitions>

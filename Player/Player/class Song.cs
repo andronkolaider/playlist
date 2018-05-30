@@ -7,6 +7,7 @@ using System.Media;
 using MediaInfoNET;
 using static System.Net.Mime.MediaTypeNames;
 using TagLib;
+using System.Windows.Media.Imaging;
 
 namespace Player
 {
@@ -28,7 +29,7 @@ namespace Player
         public string Artist { get; set; }
         public string Title { get; set; }
         public string SupportInfo { get; set; }
-        public Image Cover;
+        public BitmapSource Cover { set; get; }
 
         public Song(string _artist, short _rating, string _duration, string _title, string _supportInfo)
         {
@@ -38,5 +39,10 @@ namespace Player
             Title = _title;
             SupportInfo = _supportInfo;
         }
+
+        public Song() {
+
+        }
+
     }
 }

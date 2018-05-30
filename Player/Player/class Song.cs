@@ -41,7 +41,7 @@ namespace Player
         }
 
         public Song() {
-            
+
         }
 
     }

@@ -60,6 +60,7 @@ namespace Player {
                 }
                 
             }
+            Playlist.SelectedIndex = 0; // hob hob kostelyok
             Playlist.ItemsSource = SongList;
         }
 
@@ -78,8 +79,17 @@ namespace Player {
             this.Resources.MergedDictionaries.Add(RD);
         }
 
-        private void Playlist_SelectionChanged(object sender, SelectionChangedEventArgs e) {
-          //  LabelSongInfoSizable.Content = SongList[Playlist.SelectedIndex].Artist;
+        private void Playlist_SelectionChanged(object sender, SelectionChangedEventArgs e) {        
+            if (SongList != null) {
+                
+                LabelSongInfoSizable.Content = SongList[Playlist.SelectedIndex].Title;
+                LabelSongInfoState.Content = SongList[Playlist.SelectedIndex].Artist;
+                ImageMainCover.Source = SongList[Playlist.SelectedIndex].Cover;
+                LabelSliderSecond.Content = SongList[Playlist.SelectedIndex].Duration;
+
+               // SliderDuration.Maximum = Convert.ToInt32(SongList[Playlist.SelectedIndex].Duration.Trim());
+
+            }
         }
     }
 

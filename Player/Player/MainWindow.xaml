@@ -29,9 +29,28 @@
         </Menu>
 
         <Grid Grid.Row="1" Name="GridPlayer" Style="{DynamicResource GridStyle}">
-            <ToolBar>
-                <Button Width="100" Height="100">
-                    <Image Source="" />
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="175" />
+                <ColumnDefinition Width="1*" />
+            </Grid.ColumnDefinitions>
+
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+
+
+
+            <ToolBar  Grid.Row="1" Grid.RowSpan="1" Style="{DynamicResource ToolBarStyle}">
+                <Button Name="ButtonBack" Height="50" >
+                    <Image Source="https://static.thenounproject.com/png/251451-200.png" />
+                </Button>
+                <Button Name="ButtonPlayPause" Width="50" Height="50">
+                    <Image Source="https://www.shareicon.net/data/512x512/2015/10/21/659448_button_512x512.png" />
+                </Button>
+                <Button Name="ButtonForward" Height="50">
+                    <Image Source="https://d30y9cdsu7xlg0.cloudfront.net/png/251452-200.png" />
                 </Button>
             </ToolBar>
         </Grid>
@@ -50,7 +69,7 @@
                             <ColumnDefinition Width="50" />
                             <ColumnDefinition Width="1*" />
                             <ColumnDefinition Width="150" />
-                        </Grid.ColumnDefinitions> 
+                        </Grid.ColumnDefinitions>
 
                         <Grid.RowDefinitions>
                             <RowDefinition Height="30"/>
@@ -76,7 +95,7 @@
 
         </ListView>
 
-<!--
+        <!--
         <Image Grid.Row="2" Name="img" ></Image>
         
         <Grid Grid.Row="1" Background="Gray" Height="50" MinWidth="625">

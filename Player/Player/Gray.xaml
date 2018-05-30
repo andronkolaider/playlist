@@ -2,26 +2,36 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:local="clr-namespace:Player">
 
+    <SolidColorBrush x:Key="Gray" Color="Gray" />
+    <SolidColorBrush x:Key="White" Color="#e5e5e5" />
+
     <Style x:Key="Style" TargetType="Control">
-        <Setter Property="Background" Value="Gray"/>
-        <Setter Property="Foreground" Value="#e5e5e5"/>
+        <Setter Property="Background" Value="{StaticResource Gray}"/>
+        <Setter Property="Foreground" Value="{StaticResource White}"/>
     </Style>
 
     <Style x:Key="TextStyle" TargetType="TextBlock">
-        <Setter Property="Background" Value="Gray"/>
-        <Setter Property="Foreground" Value="#e5e5e5"/>
+        <Setter Property="Background" Value="{StaticResource Gray}"/>
+        <Setter Property="Foreground" Value="{StaticResource White}"/>
     </Style>
 
     <Style x:Key="GridStyle" TargetType="Grid">
-        <Setter Property="Background" Value="Gray"/>
+        <Setter Property="Background" Value="{StaticResource Gray}"/>
     </Style>
 
     <Style x:Key="GridReversedStyle" TargetType="Grid">
-        <Setter Property="Background" Value="#e5e5e5"/>
+        <Setter Property="Background" Value="{StaticResource White}"/>
     </Style>
 
     <Style x:Key="ToolBarStyle" TargetType="ToolBar">
-        <Setter Property="Background" Value="Gray"/>
+        <Setter Property="Background" Value="{StaticResource Gray}"/>
+    </Style>
+
+    <Style x:Key="LabelStyle" TargetType="Label">
+        <Setter Property="Foreground" Value="{StaticResource White}"/>
+        <Setter Property="HorizontalAlignment" Value="Center"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="FontSize" Value="25"/>
     </Style>
 
 </ResourceDictionary>

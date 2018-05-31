@@ -20,7 +20,10 @@ namespace Player {
     /// </summary>
    
     public partial class MainWindow : Window {
+
         public List<Song> SongList;
+        public Song SongCurrent = new Song();
+        public bool isplaying = false;
 
         public MainWindow() {
             InitializeComponent();
@@ -44,6 +47,8 @@ namespace Player {
                     tempSong = new Song(media.General.Description, 0, media.General.DurationString, media.Title, media.Description);
 
                     // ahtung !!
+
+                    tempSong.FullName = item.FullName;
 
                     TagLib.File file = TagLib.File.Create(item.FullName);
                     tempSong.Artist = file.Tag.FirstArtist;
@@ -81,6 +86,10 @@ namespace Player {
 
         private void Playlist_SelectionChanged(object sender, SelectionChangedEventArgs e) {        
             if (SongList != null) {
+
+                SongCurrent = SongList[Playlist.SelectedIndex];
+
+                Media.Source = new Uri(SongCurrent.FullName);
                 
                 LabelSongInfoSizable.Content = SongList[Playlist.SelectedIndex].Title;
                 LabelSongInfoState.Content = SongList[Playlist.SelectedIndex].Artist;
@@ -90,6 +99,41 @@ namespace Player {
                // SliderDuration.Maximum = Convert.ToInt32(SongList[Playlist.SelectedIndex].Duration.Trim());
 
             }
+        }
+
+        private void ButtonBack_Click(object sender, RoutedEventArgs e) {
+            
+        }
+
+        private void ButtonPlayPause_Click(object sender, RoutedEventArgs e) {
+
+            // http://cdn.onlinewebfonts.com/svg/img_68580.png // play
+            // https://www.shareicon.net/data/512x512/2015/10/21/659448_button_512x512.png // pause
+
+            if (!isplaying) {
+
+                ImagePlayPause.Source = new BitmapImage(new Uri(@"https://www.shareicon.net/data/512x512/2015/10/21/659448_button_512x512.png"));
+
+                try {
+                    Media.Play();
+                }
+                catch (Exception) { }
+
+            }
+            else {
+
+                ImagePlayPause.Source = new BitmapImage(new Uri(@"http://cdn.onlinewebfonts.com/svg/img_68580.png"));
+
+                try {
+                    Media.Pause();
+                }
+                catch (Exception) { }               
+            }
+            isplaying = !isplaying;
+        }
+
+        private void ButtonForward_Click(object sender, RoutedEventArgs e) {
+
         }
     }
 

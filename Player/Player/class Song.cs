@@ -27,6 +27,7 @@ namespace Player
             }
         }
         public string Artist { get; set; }
+        public string FullName { get; set; }
         public string Title { get; set; }
         public string SupportInfo { get; set; }
         public BitmapSource Cover { set; get; }
